@@ -1,0 +1,20 @@
+---
+- name: Update homebrew
+  command: brew update
+  become: no
+
+- name: Tap casks
+  homebrew_cask:
+    name: {{ item }}
+    state: present
+  with_items:
+    - chef/chef
+    - heroku/brew
+    - homebrew/bundle
+    - homebrew/cask
+    - homebrew/cask-drivers
+    - homebrew/cask-fonts
+    - homebrew/core
+    - homebrew/services
+    - InstantClientTap/instantclient
+  become: no

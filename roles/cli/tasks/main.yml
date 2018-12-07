@@ -1,0 +1,22 @@
+---
+- name: install iterm-2
+  homebrew_cask:
+    name: iterm-2
+    state: latest
+
+- name: install cli tools
+  homebrew:
+    name: {{ item }}
+    state: latest
+  with_items:
+    - curl
+    - htop
+    - httpie
+    - jq
+    - imagemagick
+    - tmux
+    - tree
+    - vim
+    - wget
+    - xz
+

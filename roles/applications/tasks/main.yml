@@ -1,0 +1,23 @@
+---
+- name: install browsers
+  homebrew_cask:
+    name: {{ item }}
+    state: latest
+  with_items:
+    - firefox
+    - google-chrome
+    - chrome-cli
+    - chromedriver
+
+- name: install other applications
+  hombrew_cask:
+    name: {{ item }}
+    state: latest
+  with_items:
+    - adobe-acrobat-reader
+    - gimp
+    - hammerspoon
+    - libreoffice
+    - slack
+    - vlc
+    - vlc-webplugin

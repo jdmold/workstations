@@ -1,0 +1,10 @@
+---
+- name: install git
+  hombrew:
+    name: {{ item }}
+    state: latest
+  with_items:
+    - git
+    - git-crypt
+    - git-extras
+    - git-lfs
